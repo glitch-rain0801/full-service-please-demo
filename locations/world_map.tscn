@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://lq8nn3vfvuip"]
+
+[ext_resource type="PackedScene" uid="uid://cuwex1wxo6g5y" path="res://locations/lounge_area/lounge_area.tscn" id="1_0x603"]
+[ext_resource type="PackedScene" uid="uid://76c7aremmqwu" path="res://locations/service_area/service_area.tscn" id="2_xqgh5"]
+
+[node name="WorldMap" type="Node2D" unique_id=2023866233]
+
+[node name="LoungeArea" parent="." unique_id=832853356 instance=ExtResource("1_0x603")]
+
+[node name="ServiceArea" parent="." unique_id=766403281 instance=ExtResource("2_xqgh5")]
+position = Vector2(-1344, 0)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=660452456]
+anchor_mode = 0

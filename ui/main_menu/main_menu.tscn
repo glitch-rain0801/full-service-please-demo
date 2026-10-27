@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gf7s4qjb03a5"]
 
+[ext_resource type="Script" uid="uid://bb4oyfl7v0ylp" path="res://ui/main_menu/main_menu.gd" id="1_mu8pm"]
 [ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="1_uhj5c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fssx7"]
@@ -15,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
+script = ExtResource("1_mu8pm")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=826980938]
 layout_mode = 2
@@ -62,3 +64,5 @@ text = "Settings"
 layout_mode = 2
 theme = ExtResource("1_uhj5c")
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Buttons/NewGame" to="." method="_on_new_game_pressed"]

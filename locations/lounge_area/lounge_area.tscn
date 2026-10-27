@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cuwex1wxo6g5y"]
+
+[node name="LoungeArea" type="Node2D" unique_id=832853356]
+
+[node name="Void" type="ColorRect" parent="." unique_id=1309438162]
+custom_minimum_size = Vector2(1344, 832)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+
+[node name="Wall" type="ColorRect" parent="." unique_id=89832686]
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 192.0
+mouse_filter = 2
+color = Color(0.6392157, 0.40392157, 0.2901961, 1)
+
+[node name="Divider" type="ColorRect" parent="." unique_id=14950291]
+offset_top = 576.0
+offset_right = 64.0
+offset_bottom = 704.0
+mouse_filter = 2
+color = Color(0.6392157, 0.40392157, 0.2901961, 1)
+
+[node name="Floor" type="ColorRect" parent="." unique_id=166778914]
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1344.0
+offset_bottom = 832.0
+mouse_filter = 2
+color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+
+[node name="EntranceLeft" type="ColorRect" parent="." unique_id=794518662]
+offset_top = 704.0
+offset_right = 64.0
+offset_bottom = 832.0
+mouse_filter = 2
+color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+
+[node name="EntranceRight" type="ColorRect" parent="." unique_id=1779500580]
+offset_top = 192.0
+offset_right = 64.0
+offset_bottom = 256.0
+mouse_filter = 2
+color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+
+[node name="TableSide" type="ColorRect" parent="." unique_id=55767977]
+offset_left = 168.0
+offset_top = 592.0
+offset_right = 272.0
+offset_bottom = 632.0
+mouse_filter = 2
+color = Color(0.6392157, 0.40392157, 0.2901961, 1)
+
+[node name="TableTop" type="ColorRect" parent="." unique_id=1844096845]
+offset_left = 168.0
+offset_top = 368.0
+offset_right = 272.0
+offset_bottom = 592.0
+mouse_filter = 2
+color = Color(0.7529412, 0.4862745, 0.3137255, 1)
+
+[node name="Carpet" type="ColorRect" parent="." unique_id=287473569]
+offset_left = 336.0
+offset_top = 336.0
+offset_right = 1072.0
+offset_bottom = 688.0
+mouse_filter = 2
+color = Color(0.5882353, 0.17254902, 0.1254902, 1)

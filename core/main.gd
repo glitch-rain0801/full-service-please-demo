@@ -26,7 +26,7 @@ func _init() -> void:
 
 
 func _ready() -> void:
-	pass
+	load_to_menu_node("res://ui/main_menu/main_menu.tscn")
 
 
 func load_to_systems_node(scene_path: String) -> void:
