@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dakumb8wj1qov"]
+
+[node name="GameManager" type="Node" unique_id=487455063]
+
+[node name="EconomyManager" type="Node" parent="." unique_id=1835805059]
+
+[node name="EvaluationManager" type="Node" parent="." unique_id=1221394623]
+
+[node name="EventManager" type="Node" parent="." unique_id=1011158216]
+
+[node name="ServiceManager" type="Node" parent="." unique_id=1512043644]
+
+[node name="SkillTreeManager" type="Node" parent="." unique_id=140795153]
+
+[node name="SpawnManager" type="Node" parent="." unique_id=852220638]

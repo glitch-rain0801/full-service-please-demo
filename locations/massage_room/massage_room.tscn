@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://7q4lpx1ejy5d"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_487wa"]
+[ext_resource type="Texture2D" uid="uid://c4r46dsycq2tr" path="res://assets/icons/icon.svg" id="2_604fa"]
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="2_tglme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3215499, 0.1810278, 0.13517469, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ul4"]
+bg_color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssgig"]
+size = Vector2(64, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_487wa"]
+size = Vector2(192, 256)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssgig"]
+bg_color = Color(0.20766553, 0.49187624, 0.6402107, 0.3882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fpdc"]
+bg_color = Color(0.20784314, 0.49019608, 0.6392157, 0.3882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dgm6"]
+bg_color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tglme"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.32019654, 0.15775636, 0.09332653, 0.45882353)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_604fa"]
+bg_color = Color(0.27278775, 0.15405908, 0.13940668, 0.654902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x823c"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.35971227, 0.46353525, 0.5606433, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxwwh"]
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="MassageRoom" type="Node2D" unique_id=203524182]
+
+[node name="FloorBorder" type="PanelContainer" parent="." unique_id=242749635]
+custom_minimum_size = Vector2(192, 256)
+offset_right = 192.0
+offset_bottom = 256.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+
+[node name="Floor" type="Panel" parent="FloorBorder" unique_id=347979537]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62ul4")
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=520179202]
+
+[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=1108209359]
+position = Vector2(0, 212)
+shape = SubResource("RectangleShape2D_ssgig")
+
+[node name="AssignmentArea" type="Area2D" parent="." unique_id=1097699363]
+
+[node name="PickupZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=1846065028]
+position = Vector2(96, 128)
+shape = SubResource("RectangleShape2D_487wa")
+
+[node name="Barrier" type="Control" parent="." unique_id=1405675628]
+custom_minimum_size = Vector2(192, 256)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 256.0
+
+[node name="AssignMasseur" type="PanelContainer" parent="Barrier" unique_id=644076505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ssgig")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Barrier/AssignMasseur" unique_id=1976561194]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Assign" type="Button" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=1817392832]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("2_tglme")
+theme_type_variation = &"SquareButton"
+text = "+"
+
+[node name="Label" type="Label" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=455942116]
+layout_mode = 2
+text = "Assign Masseur"
+
+[node name="Unavailable" type="PanelContainer" parent="Barrier" unique_id=139013014]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3fpdc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Barrier/Unavailable" unique_id=1595787158]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+offset_transform_rotation = -0.17453292
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dgm6")
+
+[node name="Label" type="Label" parent="Barrier/Unavailable/PanelContainer" unique_id=2047973337]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 21
+text = "Unavailable"
+
+[node name="MasseurDisplay" type="Node2D" parent="." unique_id=1842146674]
+
+[node name="ShadowBorder" type="PanelContainer" parent="MasseurDisplay" unique_id=612091433]
+offset_left = -32.0
+offset_top = 264.0
+offset_right = 32.0
+offset_bottom = 296.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tglme")
+
+[node name="Shadow" type="Panel" parent="MasseurDisplay/ShadowBorder" unique_id=2142797027]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_604fa")
+
+[node name="MasseurSprite" type="Sprite2D" parent="MasseurDisplay" unique_id=1279170808]
+position = Vector2(0, 207.99998)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_487wa")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 416)
+
+[node name="ClientDisplay" type="Node2D" parent="." unique_id=968251565]
+
+[node name="ShadowBorder" type="PanelContainer" parent="ClientDisplay" unique_id=2136448170]
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 128.0
+offset_bottom = 208.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tglme")
+
+[node name="Shadow" type="Panel" parent="ClientDisplay/ShadowBorder" unique_id=2110190970]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_604fa")
+
+[node name="ClientSprite" type="Sprite2D" parent="ClientDisplay" unique_id=400273469]
+position = Vector2(96, 112)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_487wa")
+region_enabled = true
+region_rect = Rect2(0, 416, 256, 416)
+
+[node name="Items" type="Control" parent="." unique_id=113876068]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 16.0
+offset_right = 232.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Items" unique_id=1199709894]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -4.0
+offset_right = -8.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x823c")
+
+[node name="PanelContainer" type="PanelContainer" parent="Items/PanelContainer" unique_id=2036313623]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxwwh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Items/PanelContainer/PanelContainer" unique_id=1517717487]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Item" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1294844097]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_604fa")
+expand_mode = 1
+
+[node name="Item2" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1286153617]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_604fa")
+expand_mode = 1
+
+[node name="Item3" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1155456114]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_604fa")
+expand_mode = 1

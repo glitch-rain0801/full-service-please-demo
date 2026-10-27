@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://76c7aremmqwu"]
 
+[ext_resource type="PackedScene" uid="uid://7q4lpx1ejy5d" path="res://locations/massage_room/massage_room.tscn" id="1_xjtky"]
+
 [node name="ServiceArea" type="Node2D" unique_id=766403281]
 
 [node name="Void" type="ColorRect" parent="." unique_id=963452063]
@@ -46,3 +48,26 @@ offset_right = 1344.0
 offset_bottom = 256.0
 mouse_filter = 2
 color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+
+[node name="Rooms" type="Node2D" parent="." unique_id=1689218284]
+
+[node name="MassageRoom" parent="Rooms" unique_id=203524182 instance=ExtResource("1_xjtky")]
+position = Vector2(112, 192)
+
+[node name="MassageRoom2" parent="Rooms" unique_id=2002410445 instance=ExtResource("1_xjtky")]
+position = Vector2(400, 192)
+
+[node name="MassageRoom3" parent="Rooms" unique_id=38959704 instance=ExtResource("1_xjtky")]
+position = Vector2(688, 192)
+
+[node name="MassageRoom4" parent="Rooms" unique_id=1843098248 instance=ExtResource("1_xjtky")]
+position = Vector2(976, 192)
+
+[node name="MassageRoom5" parent="Rooms" unique_id=501230857 instance=ExtResource("1_xjtky")]
+position = Vector2(224, 512)
+
+[node name="MassageRoom6" parent="Rooms" unique_id=284492535 instance=ExtResource("1_xjtky")]
+position = Vector2(544, 512)
+
+[node name="MassageRoom7" parent="Rooms" unique_id=1350527951 instance=ExtResource("1_xjtky")]
+position = Vector2(864, 512)
