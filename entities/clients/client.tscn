@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dyb4et62csr0j"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_w583m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fssx7"]
+radius = 16.0
+
+[node name="Client" type="CharacterBody2D" unique_id=726018097]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=434268655]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_w583m")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 416, 256, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1452086796]
+position = Vector2(48, 88)
+shape = SubResource("CircleShape2D_fssx7")

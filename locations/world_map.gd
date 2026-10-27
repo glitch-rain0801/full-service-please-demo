@@ -1,6 +1,8 @@
 extends Node2D
 class_name WorldMap
 
+@export var lounge_area: Node2D
+@export var service_area: ServiceArea
 @export var camera: Camera2D
 
 var map_coords: Dictionary = {
@@ -10,6 +12,14 @@ var map_coords: Dictionary = {
 var disable_input: bool = false
 
 var tween: Tween
+
+func get_lounge_area() -> Node2D:
+	return lounge_area
+
+
+func get_service_area() -> ServiceArea:
+	return service_area
+
 
 func get_map_coords_key() -> String:
 	var camera_coords: Vector2 = get_camera_pos()

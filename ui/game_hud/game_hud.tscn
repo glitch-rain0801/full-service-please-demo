@@ -29,23 +29,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=675727717]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1227609852]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
 theme_override_constants/separation = 12
 
 [node name="ProgressDisplay" type="PanelContainer" parent="VBoxContainer/Header" unique_id=1809941609]
 custom_minimum_size = Vector2(1088, 56)
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header/ProgressDisplay" unique_id=158336624]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="Day" type="PanelContainer" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer" unique_id=432565088]
@@ -53,16 +58,19 @@ custom_minimum_size = Vector2(80, 32)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssgig")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer/Day" unique_id=1044893366]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DayIcon" type="TextureRect" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer/Day/HBoxContainer" unique_id=1008358078]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("1_l7n28")
 expand_mode = 1
 
@@ -76,6 +84,7 @@ text = "1"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+mouse_filter = 2
 theme = ExtResource("1_ylh68")
 
 [node name="Coins" type="PanelContainer" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer" unique_id=1950702422]
@@ -83,16 +92,19 @@ custom_minimum_size = Vector2(96, 32)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ssgig")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer/Coins" unique_id=1339060136]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="CoinIcon" type="TextureRect" parent="VBoxContainer/Header/ProgressDisplay/HBoxContainer/Coins/HBoxContainer" unique_id=1597176784]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("1_l7n28")
 expand_mode = 1
 

@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://dakumb8wj1qov"]
 
-[node name="GameManager" type="Node" unique_id=487455063]
+[ext_resource type="Script" uid="uid://cjq17os0cs464" path="res://gameplay/game_manager.gd" id="1_085dr"]
+[ext_resource type="Script" uid="uid://yde2cbvn5r4b" path="res://gameplay/event/event_manager.gd" id="2_axnhg"]
+
+[node name="GameManager" type="Node" unique_id=487455063 node_paths=PackedStringArray("event_manager")]
+script = ExtResource("1_085dr")
+event_manager = NodePath("EventManager")
 
 [node name="EconomyManager" type="Node" parent="." unique_id=1835805059]
 
 [node name="EvaluationManager" type="Node" parent="." unique_id=1221394623]
 
 [node name="EventManager" type="Node" parent="." unique_id=1011158216]
+script = ExtResource("2_axnhg")
 
 [node name="ServiceManager" type="Node" parent="." unique_id=1512043644]
 

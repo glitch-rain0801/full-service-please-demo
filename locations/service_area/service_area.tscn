@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://76c7aremmqwu"]
 
+[ext_resource type="Script" uid="uid://cv8m4kqcyyd3s" path="res://locations/service_area/service_area.gd" id="1_0m61h"]
 [ext_resource type="PackedScene" uid="uid://7q4lpx1ejy5d" path="res://locations/massage_room/massage_room.tscn" id="1_xjtky"]
 
-[node name="ServiceArea" type="Node2D" unique_id=766403281]
+[node name="ServiceArea" type="Node2D" unique_id=766403281 node_paths=PackedStringArray("massage_rooms")]
+script = ExtResource("1_0m61h")
+massage_rooms = NodePath("Rooms")
 
 [node name="Void" type="ColorRect" parent="." unique_id=963452063]
 custom_minimum_size = Vector2(1344, 832)

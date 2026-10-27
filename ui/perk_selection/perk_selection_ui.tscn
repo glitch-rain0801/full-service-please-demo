@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bmuejknh6h5jp"]
+
+[ext_resource type="Script" uid="uid://dh3s0sps067jk" path="res://ui/perk_selection/perk_selection_ui.gd" id="1_pnsfj"]
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="3_b7nc0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+bg_color = Color(0.29803923, 0.4392157, 0.627451, 1)
+
+[node name="PerkSelectionUI" type="PanelContainer" unique_id=398419763 node_paths=PackedStringArray("perk_container", "confirm_button")]
+self_modulate = Color(1, 1, 1, 0.6666667)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+script = ExtResource("1_pnsfj")
+perk_container = NodePath("VBoxContainer/Perks")
+confirm_button = NodePath("VBoxContainer/Confirm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=125019468]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 64
+
+[node name="Perks" type="HBoxContainer" parent="VBoxContainer" unique_id=1521379676]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 64
+
+[node name="Confirm" type="Button" parent="VBoxContainer" unique_id=2106309973]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 640)
+mouse_filter = 1
+theme = ExtResource("3_b7nc0")
+text = "Confirm"
+
+[connection signal="pressed" from="VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

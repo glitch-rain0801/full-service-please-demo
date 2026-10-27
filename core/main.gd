@@ -65,9 +65,16 @@ func load_to_hud_node(scene_path: String) -> void:
 	hud_node.add_child(new_scene)
 
 
-func load_to_pause_node(scene_path: String) -> void:
+func load_to_pause_node(scene_path: String, params: Dictionary = {}) -> void:
 	var new_scene = load(scene_path).instantiate()
+	
+	if params:
+		if new_scene is PerkSelectionUI:
+			if params.get("options") != null:
+				new_scene.options = params["options"]
+	
 	current_pause_scene = new_scene
+	
 	pause_node.add_child(new_scene)
 
 

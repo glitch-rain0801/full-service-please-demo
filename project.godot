@@ -18,6 +18,7 @@ config/icon="res://assets/icons/icon.svg"
 [autoload]
 
 Global="*uid://dyu24m4e36uv8"
+Entities="*uid://dx8020u16chij"
 
 [display]
 

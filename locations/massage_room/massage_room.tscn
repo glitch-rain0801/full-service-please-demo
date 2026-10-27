@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://7q4lpx1ejy5d"]
 
+[ext_resource type="Script" uid="uid://dmib31yjaxuhm" path="res://locations/massage_room/massage_room.gd" id="1_3fpdc"]
 [ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_487wa"]
 [ext_resource type="Texture2D" uid="uid://c4r46dsycq2tr" path="res://assets/icons/icon.svg" id="2_604fa"]
 [ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="2_tglme"]
@@ -22,21 +23,6 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssgig"]
-size = Vector2(64, 168)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_487wa"]
-size = Vector2(192, 256)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssgig"]
-bg_color = Color(0.20766553, 0.49187624, 0.6402107, 0.3882353)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fpdc"]
-bg_color = Color(0.20784314, 0.49019608, 0.6392157, 0.3882353)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dgm6"]
-bg_color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tglme"]
 content_margin_left = 8.0
 content_margin_top = 8.0
@@ -57,6 +43,12 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 corner_detail = 20
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssgig"]
+size = Vector2(64, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_487wa"]
+size = Vector2(192, 256)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x823c"]
 content_margin_left = 4.0
 content_margin_top = 4.0
@@ -75,7 +67,35 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="MassageRoom" type="Node2D" unique_id=203524182]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssgig"]
+bg_color = Color(0.20766553, 0.49187624, 0.6402107, 0.3882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fpdc"]
+bg_color = Color(0.20784314, 0.49019608, 0.6392157, 0.3882353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dgm6"]
+bg_color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
+
+[node name="MassageRoom" type="Node2D" unique_id=203524182 node_paths=PackedStringArray("masseur_display", "masseur_sprite", "client_display", "client_sprite", "pickup_zone", "assignment_zone", "items", "barrier", "assign_masseur_ui", "unavailable_ui")]
+script = ExtResource("1_3fpdc")
+masseur_display = NodePath("MasseurDisplay")
+masseur_sprite = NodePath("MasseurDisplay/MasseurSprite")
+client_display = NodePath("ClientDisplay")
+client_sprite = NodePath("ClientDisplay/ClientSprite")
+pickup_zone = NodePath("PickupArea/PickupZone")
+assignment_zone = NodePath("AssignmentArea/AssignmentZone")
+items = NodePath("Items")
+barrier = NodePath("Barrier")
+assign_masseur_ui = NodePath("Barrier/AssignMasseur")
+unavailable_ui = NodePath("Barrier/Unavailable")
 
 [node name="FloorBorder" type="PanelContainer" parent="." unique_id=242749635]
 custom_minimum_size = Vector2(192, 256)
@@ -88,80 +108,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_62ul4")
-
-[node name="PickupArea" type="Area2D" parent="." unique_id=520179202]
-
-[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=1108209359]
-position = Vector2(0, 212)
-shape = SubResource("RectangleShape2D_ssgig")
-
-[node name="AssignmentArea" type="Area2D" parent="." unique_id=1097699363]
-
-[node name="PickupZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=1846065028]
-position = Vector2(96, 128)
-shape = SubResource("RectangleShape2D_487wa")
-
-[node name="Barrier" type="Control" parent="." unique_id=1405675628]
-custom_minimum_size = Vector2(192, 256)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 192.0
-offset_bottom = 256.0
-
-[node name="AssignMasseur" type="PanelContainer" parent="Barrier" unique_id=644076505]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ssgig")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Barrier/AssignMasseur" unique_id=1976561194]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Assign" type="Button" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=1817392832]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 1
-theme = ExtResource("2_tglme")
-theme_type_variation = &"SquareButton"
-text = "+"
-
-[node name="Label" type="Label" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=455942116]
-layout_mode = 2
-text = "Assign Masseur"
-
-[node name="Unavailable" type="PanelContainer" parent="Barrier" unique_id=139013014]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_3fpdc")
-
-[node name="PanelContainer" type="PanelContainer" parent="Barrier/Unavailable" unique_id=1595787158]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-offset_transform_enabled = true
-offset_transform_scale = Vector2(0.8, 0.8)
-offset_transform_rotation = -0.17453292
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0dgm6")
-
-[node name="Label" type="Label" parent="Barrier/Unavailable/PanelContainer" unique_id=2047973337]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 21
-text = "Unavailable"
 
 [node name="MasseurDisplay" type="Node2D" parent="." unique_id=1842146674]
 
@@ -207,6 +153,18 @@ texture = ExtResource("1_487wa")
 region_enabled = true
 region_rect = Rect2(0, 416, 256, 416)
 
+[node name="PickupArea" type="Area2D" parent="." unique_id=520179202]
+
+[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=1108209359]
+position = Vector2(0, 212)
+shape = SubResource("RectangleShape2D_ssgig")
+
+[node name="AssignmentArea" type="Area2D" parent="." unique_id=1097699363]
+
+[node name="AssignmentZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=1846065028]
+position = Vector2(96, 128)
+shape = SubResource("RectangleShape2D_487wa")
+
 [node name="Items" type="Control" parent="." unique_id=113876068]
 layout_mode = 3
 anchors_preset = 8
@@ -222,7 +180,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Items" unique_id=1199709894]
+[node name="ContainerBorder" type="PanelContainer" parent="Items" unique_id=1199709894]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -233,37 +191,108 @@ offset_right = -8.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x823c")
 
-[node name="PanelContainer" type="PanelContainer" parent="Items/PanelContainer" unique_id=2036313623]
+[node name="PanelContainer" type="PanelContainer" parent="Items/ContainerBorder" unique_id=2036313623]
 layout_mode = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qxwwh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Items/PanelContainer/PanelContainer" unique_id=1517717487]
+[node name="VBoxContainer" type="VBoxContainer" parent="Items/ContainerBorder/PanelContainer" unique_id=1517717487]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
-[node name="Item" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1294844097]
+[node name="Item" type="TextureRect" parent="Items/ContainerBorder/PanelContainer/VBoxContainer" unique_id=1294844097]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("2_604fa")
 expand_mode = 1
 
-[node name="Item2" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1286153617]
+[node name="Item2" type="TextureRect" parent="Items/ContainerBorder/PanelContainer/VBoxContainer" unique_id=1286153617]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("2_604fa")
 expand_mode = 1
 
-[node name="Item3" type="TextureRect" parent="Items/PanelContainer/PanelContainer/VBoxContainer" unique_id=1155456114]
+[node name="Item3" type="TextureRect" parent="Items/ContainerBorder/PanelContainer/VBoxContainer" unique_id=1155456114]
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 texture = ExtResource("2_604fa")
 expand_mode = 1
+
+[node name="Barrier" type="Control" parent="." unique_id=1405675628]
+custom_minimum_size = Vector2(192, 256)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 256.0
+mouse_filter = 2
+
+[node name="AssignMasseur" type="PanelContainer" parent="Barrier" unique_id=644076505]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ssgig")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Barrier/AssignMasseur" unique_id=1976561194]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Assign" type="Button" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=1817392832]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme = ExtResource("2_tglme")
+theme_type_variation = &"SquareButton"
+text = "+"
+
+[node name="Label" type="Label" parent="Barrier/AssignMasseur/VBoxContainer" unique_id=455942116]
+layout_mode = 2
+text = "Assign Masseur"
+
+[node name="Unavailable" type="PanelContainer" parent="Barrier" unique_id=139013014]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3fpdc")
+
+[node name="PanelContainer" type="PanelContainer" parent="Barrier/Unavailable" unique_id=1595787158]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.8, 0.8)
+offset_transform_rotation = -0.17453292
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dgm6")
+
+[node name="Label" type="Label" parent="Barrier/Unavailable/PanelContainer" unique_id=2047973337]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 21
+text = "Unavailable"
