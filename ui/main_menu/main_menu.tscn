@@ -3,6 +3,10 @@
 [ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="1_uhj5c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fssx7"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 256.0
+content_margin_bottom = 8.0
 
 [node name="MainMenu" type="PanelContainer" unique_id=530119670]
 anchors_preset = 15
@@ -14,12 +18,20 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=826980938]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1700503068]
 layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Full Service, Please!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer" unique_id=1495955644]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="NewGame" type="Button" parent="VBoxContainer/Buttons" unique_id=100615588]
 layout_mode = 2
