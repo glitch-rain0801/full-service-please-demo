@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ex2ai8s4a7d8"]
+
+[ext_resource type="Script" uid="uid://comcypksas7o8" path="res://core/main.gd" id="1_xiose"]
+
+[node name="Main" type="Node" unique_id=1439563278 node_paths=PackedStringArray("systems_node", "world_node", "entities_node", "effects_node", "menu_node", "hud_node", "pause_node", "transition_node", "debug_node")]
+script = ExtResource("1_xiose")
+systems_node = NodePath("Systems")
+world_node = NodePath("Game/World")
+entities_node = NodePath("Game/Entities")
+effects_node = NodePath("Game/Effects")
+menu_node = NodePath("MenuLayer/Menu")
+hud_node = NodePath("DisplayLayer/HUD")
+pause_node = NodePath("PauseLayer/Pause")
+transition_node = NodePath("TransitionLayer/Transition")
+debug_node = NodePath("DebugLayer/Debug")
+
+[node name="Systems" type="Node" parent="." unique_id=1141127458]
+
+[node name="Game" type="Node2D" parent="." unique_id=1113275423]
+
+[node name="World" type="Node2D" parent="Game" unique_id=161317321]
+
+[node name="Entities" type="Node2D" parent="Game" unique_id=403178021]
+
+[node name="Effects" type="Node2D" parent="Game" unique_id=90378723]
+
+[node name="MenuLayer" type="CanvasLayer" parent="." unique_id=1736088915]
+layer = 10
+
+[node name="Menu" type="Control" parent="MenuLayer" unique_id=600217758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DisplayLayer" type="CanvasLayer" parent="." unique_id=51882863]
+layer = 20
+
+[node name="HUD" type="Control" parent="DisplayLayer" unique_id=1968404244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=2080407294]
+layer = 30
+
+[node name="Pause" type="Control" parent="PauseLayer" unique_id=20195136]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1369303150]
+layer = 50
+
+[node name="Transition" type="Control" parent="TransitionLayer" unique_id=628300556]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DebugLayer" type="CanvasLayer" parent="." unique_id=753140342]
+layer = 100
+
+[node name="Debug" type="Control" parent="DebugLayer" unique_id=428263987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
