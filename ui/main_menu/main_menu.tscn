@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://gf7s4qjb03a5"]
+
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="1_uhj5c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fssx7"]
+
+[node name="MainMenu" type="PanelContainer" unique_id=530119670]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=826980938]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1700503068]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer" unique_id=1495955644]
+layout_mode = 2
+
+[node name="NewGame" type="Button" parent="VBoxContainer/Buttons" unique_id=100615588]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="VBoxContainer/Buttons" unique_id=1545779452]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "Load Game"
+
+[node name="Gallery" type="Button" parent="VBoxContainer/Buttons" unique_id=1286948289]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "Gallery"
+
+[node name="Achievements" type="Button" parent="VBoxContainer/Buttons" unique_id=572788776]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "Achievements"
+
+[node name="Settings" type="Button" parent="VBoxContainer/Buttons" unique_id=1043285036]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer/Buttons" unique_id=1737435181]
+layout_mode = 2
+theme = ExtResource("1_uhj5c")
+text = "Quit"
