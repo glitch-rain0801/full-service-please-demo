@@ -23,6 +23,7 @@ func _ready() -> void:
 		perk_container.add_child(new_perk)
 	
 	self_modulate.a = 0.0
+	confirm_button.disabled = true
 	
 	tween = create_tween()
 	tween.tween_property(
@@ -49,6 +50,7 @@ func _ready() -> void:
 
 
 func set_selected_perk(perk: PerkChoice) -> void:
+	confirm_button.disabled = false
 	selected_perk = perk
 
 

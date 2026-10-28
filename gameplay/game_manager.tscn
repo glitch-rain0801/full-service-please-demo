@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cjq17os0cs464" path="res://gameplay/game_manager.gd" id="1_085dr"]
 [ext_resource type="Script" uid="uid://yde2cbvn5r4b" path="res://gameplay/event/event_manager.gd" id="2_axnhg"]
+[ext_resource type="Script" uid="uid://bferdcadmyljo" path="res://gameplay/spawn/spawn_manager.gd" id="3_dmqgb"]
 
-[node name="GameManager" type="Node" unique_id=487455063 node_paths=PackedStringArray("event_manager")]
+[node name="GameManager" type="Node" unique_id=487455063 node_paths=PackedStringArray("event_manager", "spawn_manager")]
 script = ExtResource("1_085dr")
 event_manager = NodePath("EventManager")
+spawn_manager = NodePath("SpawnManager")
 
 [node name="EconomyManager" type="Node" parent="." unique_id=1835805059]
 
@@ -19,3 +21,4 @@ script = ExtResource("2_axnhg")
 [node name="SkillTreeManager" type="Node" parent="." unique_id=140795153]
 
 [node name="SpawnManager" type="Node" parent="." unique_id=852220638]
+script = ExtResource("3_dmqgb")

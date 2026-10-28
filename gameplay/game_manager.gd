@@ -12,6 +12,7 @@ class GameTime extends RefCounted:
 	var shift: String = Shift.MORNING
 
 @export var event_manager: EventManager
+@export var spawn_manager: SpawnManager
 
 var time: GameTime
 
@@ -36,8 +37,12 @@ func start_shift() -> void:
 	if time.day == 7:
 		return
 	
-	var perk: Dictionary = await event_manager.get_workshift_perk(time)
+	var morning_perk: Dictionary = await event_manager.get_workshift_perk(time)
+	if morning_perk.get("name") != null:
+		pass
+	
 	await get_tree().create_timer(5).timeout
+	await spawn_manager.spawn_waves(4)
 
 func end_shift() -> void:
 	await get_tree().create_timer(5).timeout

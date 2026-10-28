@@ -41,9 +41,25 @@ func load_to_world_node(scene_path: String) -> void:
 	world_node.add_child(new_scene)
 
 
-func load_to_entities_node(scene_path: String) -> void:
+func load_to_entities_node(scene_path: String, params: Dictionary = {}) -> void:
 	var new_scene = load(scene_path).instantiate()
-	current_entity_scene = new_scene
+	
+	if params:
+		if new_scene is Client:
+			if (
+				not params.has("client_data")
+				or not params.has("preferred_masseur")
+				or not params.has("queue_no")
+			):
+				push_error("ERROR: incomplete parameter declaration")
+				return
+			
+			new_scene.client_data = params["client_data"]
+			new_scene.preferred_masseur = params["preferred_masseur"]
+			new_scene.queue_no = params["queue_no"]
+		else: # ghost logic
+			current_entity_scene = new_scene
+	
 	entities_node.add_child(new_scene)
 
 
@@ -101,6 +117,16 @@ func get_current_world_scene() -> Node:
 
 func get_current_entity_scene() -> Node:
 	return current_entity_scene
+
+func get_entity_size(include_ghosts: bool = false) -> float:
+	var count: float = 0.0
+	for entity in entities_node.get_children():
+		if not include_ghosts and entity is not Client:
+			continue
+		
+		count += 1.0
+	
+	return count
 
 
 func get_current_effects_scene() -> Node:

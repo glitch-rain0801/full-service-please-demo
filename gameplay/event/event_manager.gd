@@ -29,7 +29,8 @@ func get_workshift_perk(time: GameManager.GameTime, perk_type: PerkType = PerkTy
 	var choices: Array = _generate_perk_choices(slots, pool)
 	
 	Global.main.load_to_pause_node(
-		"res://ui/perk_selection/perk_selection_ui.tscn"
+		"res://ui/perk_selection/perk_selection_ui.tscn",
+		{ "options": choices }
 	)
 	
 	var perk_selection_ui: PerkSelectionUI = Global.main.get_current_pause_scene()
@@ -61,8 +62,9 @@ func _generate_perk_choices(slots: int, options: Variant) -> Array:
 		
 	for i in range(slots):
 		if options is Array:
-			choices.append(options.pick_random())
+			var chosen: String = options.pick_random()
+			choices.append(chosen)
 		else:
 			choices.append(options)
 	
-	return [] 
+	return choices

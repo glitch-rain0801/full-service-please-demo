@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ClientData" format=3 uid="uid://dsbiekn1625kd"]
+
+[ext_resource type="Script" uid="uid://il025n8myglq" path="res://data/entity_def/client_data.gd" id="1_f7xna"]
+
+[resource]
+script = ExtResource("1_f7xna")
+id = "bara_white"
+name = "John White"
+atlas_coords = Vector2(0, 1)
+metadata/_custom_type_script = "uid://il025n8myglq"

@@ -11,8 +11,8 @@ var masseurs: Dictionary = {
 }
 
 var clients: Dictionary = {
-	"bara_black": null,
-	"bara_white": null,
+	"bara_black": preload("res://entities/clients/black/bara_black.tres"),
+	"bara_white": preload("res://entities/clients/white/bara_white.tres"),
 	"bear_black": null,
 	"bear_white": null,
 	#"shota_black": null,
