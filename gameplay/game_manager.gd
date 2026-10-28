@@ -23,7 +23,7 @@ func _ready() -> void:
 func start_week() -> void:
 	var world_map: WorldMap = Global.main.get_current_world_scene()
 	if world_map is not WorldMap:
-		push_error("ERROR: Returned node is not of class 'WorldMap'.")
+		push_error("Returned node is not of class 'WorldMap' in GameManager")
 		return
 	
 	var service_area: ServiceArea = world_map.get_service_area()
@@ -47,3 +47,7 @@ func start_shift() -> void:
 func end_shift() -> void:
 	await get_tree().create_timer(5).timeout
 	pass
+
+
+func get_spawn_manager() -> SpawnManager:
+	return spawn_manager

@@ -1,6 +1,8 @@
 extends Node
 class_name SpawnManager
 
+signal queue_updated
+
 const QUEUE_START_COORDS: Vector2 = Vector2(4.2, 6)
 const GRID_SIZE: Vector2 = Vector2(64.0, 64.0)
 
@@ -36,6 +38,30 @@ func spawn_waves(number: int) -> void:
 	for i in range(number):
 		spawn_random(1)
 		await get_tree().create_timer(5).timeout
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		var world_map: WorldMap = Global.main.get_current_world_scene()
+		if world_map is not WorldMap:
+			push_error("Returned node is not of class 'WorldMap' in SpawnManager")
+			return
+		
+		if world_map.get_map_coords_key() != "lounge_area":
+			return
+		
+		var entities: Array = Global.main.get_entities()
+		var entity: Client = entities.front()
+		
+		if entity.queue_no == QUEUE_START_COORDS * GRID_SIZE:
+			print("Entity: " + str(entity))
+			print("queue_no: " + str(entity.queue_no))
+			print("is_moving? " + str(entity.moving))
+			if entity.moving:
+				return
+			entity.queue_free()
+		
+		queue_updated.emit()
 
 
 func _set_client_pool(include_special: bool) -> Array:
