@@ -15,6 +15,14 @@ var queue_no: Vector2
 var tween: Tween
 
 func _ready() -> void:
+	var game_manager: GameManager = Global.main.get_current_systems_scene()
+	if game_manager is not GameManager:
+		push_error("returned node is not of type 'GameManager'")
+		return
+			
+	var spawn_manager: SpawnManager = game_manager.get_spawn_manager()
+	spawn_manager.queue_updated.connect(Callable(self, "_on_queue_updated"))
+	
 	sprite.region_rect.position = client_data.atlas_coords * SPRITE_COORDS
 	global_position = SPAWN_POINT
 	moving = true

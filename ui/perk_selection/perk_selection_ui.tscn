@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dh3s0sps067jk" path="res://ui/perk_selection/perk_selection_ui.gd" id="1_pnsfj"]
 [ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="3_b7nc0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
-bg_color = Color(0.29803923, 0.4392157, 0.627451, 1)
-
 [node name="PerkSelectionUI" type="PanelContainer" unique_id=398419763 node_paths=PackedStringArray("perk_container", "confirm_button")]
 self_modulate = Color(1, 1, 1, 0.6666667)
 anchors_preset = 15
@@ -13,8 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+mouse_filter = 2
+theme = ExtResource("3_b7nc0")
+theme_type_variation = &"MenuBackground"
 script = ExtResource("1_pnsfj")
 perk_container = NodePath("VBoxContainer/Perks")
 confirm_button = NodePath("VBoxContainer/Confirm")

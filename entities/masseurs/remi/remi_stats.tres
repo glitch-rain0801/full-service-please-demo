@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MasseurData" format=3 uid="uid://co3sua6rprmpg"]
+
+[ext_resource type="Script" uid="uid://bjj8fn0va5gog" path="res://data/entity_def/masseur_data.gd" id="1_anf42"]
+
+[resource]
+script = ExtResource("1_anf42")
+id = "remi"
+name = "Remi Svensson"
+tag = "Runway Darling"
+description = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien. Quisque faucibus ex sapien vitae pellentesque sem placerat. Vitae pellentesque sem placerat in id cursus mi.
+
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque."
+speciality = "Swedish"
+atlas_coords = Vector2(2, 0)
+metadata/_custom_type_script = "uid://bjj8fn0va5gog"

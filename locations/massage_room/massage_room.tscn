@@ -296,3 +296,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 21
 text = "Unavailable"
+
+[connection signal="pressed" from="Barrier/AssignMasseur/VBoxContainer/Assign" to="." method="_on_assign_pressed"]

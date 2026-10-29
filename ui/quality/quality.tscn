@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://3scfgwm42coo"]
+
+[ext_resource type="Texture2D" uid="uid://c4r46dsycq2tr" path="res://assets/icons/icon.svg" id="1_7w4wu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ul4"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 4.0
+bg_color = Color(0.20019981, 0.33441418, 0.5070454, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Quality" type="PanelContainer" unique_id=1286725731]
+custom_minimum_size = Vector2(32, 32)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_62ul4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=678769413]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1727779369]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("1_7w4wu")
+expand_mode = 1
+
+[node name="Value" type="RichTextLabel" parent="HBoxContainer" unique_id=337473437]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "60s"
+horizontal_alignment = 2
+vertical_alignment = 1

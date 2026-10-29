@@ -55,6 +55,9 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+bg_color = Color(0.29803923, 0.4392157, 0.627451, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7n28"]
 bg_color = Color(0.1764706, 0.42745098, 0.75686276, 1)
 corner_radius_top_left = 50
@@ -68,6 +71,50 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvjly"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.29748917, 0.53243417, 0.8241908, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvec5"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0.634462, 0.9608937, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjdvu"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.17481104, 0.42825314, 0.7567634, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuled"]
+content_margin_left = 32.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0.634462, 0.9608937, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ul4"]
 content_margin_left = 8.0
@@ -130,8 +177,16 @@ Button/styles/hover = SubResource("StyleBoxFlat_glaud")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_jiy6e")
 Button/styles/normal = SubResource("StyleBoxFlat_wkw3y")
 Button/styles/pressed = SubResource("StyleBoxFlat_rlouu")
+MenuBackground/base_type = &"PanelContainer"
+MenuBackground/styles/panel = SubResource("StyleBoxFlat_fssx7")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_l7n28")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_354e1")
+ReverseButton/base_type = &"Button"
+ReverseButton/styles/disabled = null
+ReverseButton/styles/hover = SubResource("StyleBoxFlat_tvjly")
+ReverseButton/styles/hover_pressed = SubResource("StyleBoxFlat_jvec5")
+ReverseButton/styles/normal = SubResource("StyleBoxFlat_wjdvu")
+ReverseButton/styles/pressed = SubResource("StyleBoxFlat_iuled")
 SquareButton/base_type = &"Button"
 SquareButton/styles/disabled = SubResource("StyleBoxFlat_62ul4")
 SquareButton/styles/hover = SubResource("StyleBoxFlat_da7wo")

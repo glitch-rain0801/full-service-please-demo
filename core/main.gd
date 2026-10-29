@@ -51,20 +51,12 @@ func load_to_entities_node(scene_path: String, params: Dictionary = {}) -> void:
 				or not params.has("preferred_masseur")
 				or not params.has("queue_no")
 			):
-				push_error("incomplete Client parameter declarations in Main")
+				push_error("incomplete 'Client' parameter declarations")
 				return
 			
 			new_scene.client_data = params["client_data"]
 			new_scene.preferred_masseur = params["preferred_masseur"]
 			new_scene.queue_no = params["queue_no"]
-			
-			var game_manager: GameManager = get_current_systems_scene()
-			if game_manager is not GameManager:
-				push_error("Returned node is not of type 'GameManager' in Main")
-				return
-			
-			var spawn_manager: SpawnManager = game_manager.get_spawn_manager()
-			spawn_manager.queue_updated.connect(Callable(new_scene, "_on_queue_updated"))
 		else: # ghost logic
 			current_entity_scene = new_scene
 	

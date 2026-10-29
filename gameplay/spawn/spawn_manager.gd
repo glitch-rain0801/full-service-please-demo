@@ -51,6 +51,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		
 		var entities: Array = Global.main.get_entities()
+		if entities.is_empty():
+			return
+		
 		var entity: Client = entities.front()
 		
 		if entity.queue_no == QUEUE_START_COORDS * GRID_SIZE:

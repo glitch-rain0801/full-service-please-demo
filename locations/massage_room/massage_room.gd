@@ -12,6 +12,7 @@ class_name MassageRoom
 @export var assign_masseur_ui: Control
 @export var unavailable_ui: Control
 
+
 func set_availability(state: bool) -> void:
 	masseur_display.hide()
 	client_display.hide()
@@ -27,3 +28,15 @@ func set_availability(state: bool) -> void:
 		unavailable_ui.show()
 		assign_masseur_ui.hide()
 		assignment_zone.disabled = true
+
+
+func _on_assign_pressed() -> void:
+	var game_manager: GameManager = Global.main.get_current_systems_scene()
+	if game_manager is not GameManager:
+		push_error("returned node is not of type 'GameManager'")
+		return
+	
+	var service_manager: ServiceManager = game_manager.get_service_manager()
+	var masseur: MasseurData = await service_manager.set_working_masseur()
+	
+	print(masseur)
