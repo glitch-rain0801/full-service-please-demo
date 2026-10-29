@@ -141,9 +141,11 @@ func _update_ui(masseur_name: String) -> void:
 
 func _on_select_pressed() -> void:
 	masseur_selected.emit(selected_masseur.to_lower())
+	Global.main.unload_current_pause_scene()
 	queue_free()
 
 
 func _on_cancel_pressed() -> void:
 	masseur_selected.emit(null)
+	Global.main.unload_current_pause_scene()
 	queue_free()

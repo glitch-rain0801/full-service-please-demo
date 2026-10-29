@@ -161,3 +161,7 @@ func get_current_transition_scene() -> Node:
 
 func get_current_debug_scene() -> Node:
 	return current_debug_scene
+
+
+func unload_current_pause_scene() -> void:
+	current_pause_scene = null

@@ -56,10 +56,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		var entity: Client = entities.front()
 		
-		if entity.queue_no == QUEUE_START_COORDS * GRID_SIZE:
-			print("Entity: " + str(entity))
-			print("queue_no: " + str(entity.queue_no))
-			print("is_moving? " + str(entity.moving))
+		if entity.queue_no.is_equal_approx(QUEUE_START_COORDS * GRID_SIZE):
 			if entity.moving:
 				return
 			entity.queue_free()
