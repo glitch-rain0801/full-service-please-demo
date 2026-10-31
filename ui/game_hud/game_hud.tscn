@@ -163,6 +163,7 @@ mouse_filter = 2
 [node name="OrderContainer" type="VBoxContainer" parent="VBoxContainer/SideNav" unique_id=1376932954]
 layout_mode = 2
 size_flags_horizontal = 10
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="Footer" type="HBoxContainer" parent="VBoxContainer" unique_id=852648805]

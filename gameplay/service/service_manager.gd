@@ -13,7 +13,6 @@ func check_used_masseur(masseur_id: String) -> bool:
 			continue
 		
 		if room.current_masseur.id == masseur_id:
-			print('Hello')
 			return true
 	
 	return false

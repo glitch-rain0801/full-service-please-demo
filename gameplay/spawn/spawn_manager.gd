@@ -102,16 +102,15 @@ func _on_ghost_freed(entity: Variant, requesting_node: Variant, new_room: Massag
 		if entity is MasseurData and new_room != requesting_node:
 			new_room.toggle_masseur_display(entity)
 		
-		if entity is ClientData:
+		if entity is ClientData and new_room.current_masseur:
 			new_room.toggle_client_display(entity)
-	
 	if requesting_node is MassageRoom:
 		if new_room == requesting_node:
 			return
 		
 		requesting_node.toggle_masseur_display(new_masseur)
 	elif requesting_node is ClientOrderCard:
-		if new_room:
+		if new_room and new_room.current_masseur:
 			requesting_node.queue_free()
 
 func _set_client_pool(include_special: bool) -> Array:
