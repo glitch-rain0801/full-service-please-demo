@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://c43gyjpa45l2n"]
+
+[ext_resource type="Script" uid="uid://b3kn2loxn287a" path="res://debug/overlay/stat_override/masseur_stat_override.gd" id="1_uv8yn"]
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="2_fbxsh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MasseurStatOverride" type="PanelContainer" unique_id=342253272 node_paths=PackedStringArray("toggle_button")]
+offset_right = 762.0
+offset_bottom = 298.0
+offset_transform_enabled = true
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+script = ExtResource("1_uv8yn")
+toggle_button = NodePath("Anchor/Toggle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1484280610]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=989875380]
+layout_mode = 2
+text = "Stat Override Panel"
+
+[node name="StatOverrides" type="HBoxContainer" parent="VBoxContainer" unique_id=1154958977]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Service" type="VBoxContainer" parent="VBoxContainer/StatOverrides" unique_id=1358889571]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Time" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Service" unique_id=1890741934]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Service/Time" unique_id=581487559]
+layout_mode = 2
+text = "Service Time: "
+
+[node name="Time" type="TextEdit" parent="VBoxContainer/StatOverrides/Service/Time" unique_id=1167944521]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Cost" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Service" unique_id=1342650692]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Service/Cost" unique_id=1025922979]
+layout_mode = 2
+text = "Service Cost: "
+
+[node name="Cost" type="TextEdit" parent="VBoxContainer/StatOverrides/Service/Cost" unique_id=1392762180]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Speciality" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Service" unique_id=1665193592]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Service/Speciality" unique_id=754663770]
+layout_mode = 2
+text = "Speciality Bonus: "
+
+[node name="Speciality" type="TextEdit" parent="VBoxContainer/StatOverrides/Service/Speciality" unique_id=1801666608]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Energy" type="VBoxContainer" parent="VBoxContainer/StatOverrides" unique_id=1958652531]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Max" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Energy" unique_id=137153183]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Energy/Max" unique_id=1196822824]
+layout_mode = 2
+text = "Max Energy"
+
+[node name="Max" type="TextEdit" parent="VBoxContainer/StatOverrides/Energy/Max" unique_id=848384888]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Gain" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Energy" unique_id=2126291824]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Energy/Gain" unique_id=873446055]
+layout_mode = 2
+text = "Energy Gain"
+
+[node name="Gain" type="TextEdit" parent="VBoxContainer/StatOverrides/Energy/Gain" unique_id=1745049698]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Cost" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Energy" unique_id=844184749]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Energy/Cost" unique_id=700579587]
+layout_mode = 2
+text = "Energy Cost"
+
+[node name="Cost" type="TextEdit" parent="VBoxContainer/StatOverrides/Energy/Cost" unique_id=202315575]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Refill" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Energy" unique_id=253936260]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Energy/Refill" unique_id=275435363]
+layout_mode = 2
+text = "Refill Time"
+
+[node name="Refill" type="TextEdit" parent="VBoxContainer/StatOverrides/Energy/Refill" unique_id=1052572854]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Affinity" type="VBoxContainer" parent="VBoxContainer/StatOverrides" unique_id=605351824]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Yield" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Affinity" unique_id=266329718]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Affinity/Yield" unique_id=2093353933]
+layout_mode = 2
+text = "Affinity Yield"
+
+[node name="Yield" type="TextEdit" parent="VBoxContainer/StatOverrides/Affinity/Yield" unique_id=726842667]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Bonus" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Affinity" unique_id=983055592]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Affinity/Bonus" unique_id=1594929933]
+layout_mode = 2
+text = "Affinity Bonus"
+
+[node name="Bonus" type="TextEdit" parent="VBoxContainer/StatOverrides/Affinity/Bonus" unique_id=2091693616]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Relief" type="VBoxContainer" parent="VBoxContainer/StatOverrides" unique_id=60176311]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Chance" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Relief" unique_id=850442487]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Relief/Chance" unique_id=472673985]
+layout_mode = 2
+text = "Relief Chance:"
+
+[node name="Chance" type="TextEdit" parent="VBoxContainer/StatOverrides/Relief/Chance" unique_id=212529115]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Time" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Relief" unique_id=35940740]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Relief/Time" unique_id=300875542]
+layout_mode = 2
+text = "Relief Time"
+
+[node name="Time" type="TextEdit" parent="VBoxContainer/StatOverrides/Relief/Time" unique_id=1881245507]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Bonus" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Relief" unique_id=781883950]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Relief/Bonus" unique_id=1660116318]
+layout_mode = 2
+text = "Relief Bonus"
+
+[node name="Bonus" type="TextEdit" parent="VBoxContainer/StatOverrides/Relief/Bonus" unique_id=2038773643]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Cost" type="HBoxContainer" parent="VBoxContainer/StatOverrides/Relief" unique_id=1573216829]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/StatOverrides/Relief/Cost" unique_id=262366128]
+layout_mode = 2
+text = "Relief Cost"
+
+[node name="Cost" type="TextEdit" parent="VBoxContainer/StatOverrides/Relief/Cost" unique_id=1388664732]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer" unique_id=562543898]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="EnEnergy" type="Button" parent="VBoxContainer/Buttons" unique_id=243382673]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_fbxsh")
+text = "Disable Downtime"
+
+[node name="EnRelief" type="Button" parent="VBoxContainer/Buttons" unique_id=1149239804]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_fbxsh")
+toggle_mode = true
+text = "Enable Relief"
+
+[node name="Reset" type="Button" parent="VBoxContainer/Buttons" unique_id=1448298226]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_fbxsh")
+text = "Reset"
+
+[node name="Anchor" type="Control" parent="." unique_id=1771167734]
+z_index = -1
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Toggle" type="Button" parent="Anchor" unique_id=433935911]
+layout_mode = 0
+offset_top = -48.0
+offset_right = 106.0
+offset_bottom = -9.0
+mouse_filter = 1
+theme = ExtResource("2_fbxsh")
+text = "Show"
+
+[connection signal="pressed" from="Anchor/Toggle" to="." method="_on_toggle_pressed"]

@@ -2,16 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cjq17os0cs464" path="res://gameplay/game_manager.gd" id="1_085dr"]
 [ext_resource type="Script" uid="uid://yde2cbvn5r4b" path="res://gameplay/event/event_manager.gd" id="2_axnhg"]
+[ext_resource type="Script" uid="uid://d16hpof5aqsk0" path="res://gameplay/economy/economy_manager.gd" id="2_oq8w0"]
 [ext_resource type="Script" uid="uid://bferdcadmyljo" path="res://gameplay/spawn/spawn_manager.gd" id="3_dmqgb"]
 [ext_resource type="Script" uid="uid://odgnim3dssrt" path="res://gameplay/service/service_manager.gd" id="3_ks6fi"]
 
-[node name="GameManager" type="Node" unique_id=487455063 node_paths=PackedStringArray("event_manager", "service_manager", "spawn_manager")]
+[node name="GameManager" type="Node" unique_id=487455063 node_paths=PackedStringArray("economy_manager", "event_manager", "service_manager", "spawn_manager")]
 script = ExtResource("1_085dr")
+economy_manager = NodePath("EconomyManager")
 event_manager = NodePath("EventManager")
 service_manager = NodePath("ServiceManager")
 spawn_manager = NodePath("SpawnManager")
 
 [node name="EconomyManager" type="Node" parent="." unique_id=1835805059]
+script = ExtResource("2_oq8w0")
 
 [node name="EvaluationManager" type="Node" parent="." unique_id=1221394623]
 

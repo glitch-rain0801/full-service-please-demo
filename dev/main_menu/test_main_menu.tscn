@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d4i0je4gv74d2"]
+
+[ext_resource type="Script" uid="uid://die6sx43dxawj" path="res://dev/main_menu/test_main_menu.gd" id="1_6u82w"]
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="1_dj7hn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fssx7"]
+
+[node name="TestMainMenu" type="PanelContainer" unique_id=1061412530]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
+script = ExtResource("1_6u82w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=692087147]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=243454888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Full Service, Please! (Developer Testing Screen)"
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1669488778]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_dj7hn")
+text = "Start"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

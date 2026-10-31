@@ -102,7 +102,7 @@ func _on_ghost_freed(entity: Variant, requesting_node: Variant, new_room: Massag
 		if entity is MasseurData and new_room != requesting_node:
 			new_room.toggle_masseur_display(entity)
 		
-		if entity is ClientData and new_room.current_masseur:
+		if entity is ClientData and new_room.current_masseur and not new_room.current_client:
 			new_room.toggle_client_display(entity)
 	if requesting_node is MassageRoom:
 		if new_room == requesting_node:

@@ -14,6 +14,7 @@ class_name MassageRoom
 
 var current_masseur: MasseurData
 var current_client: ClientData
+var economy_manager: EconomyManager
 var spawn_manager: SpawnManager
 var service_manager: ServiceManager
 
@@ -29,6 +30,14 @@ func _ready() -> void:
 	
 	service_manager = game_manager.get_service_manager()
 	spawn_manager = game_manager.get_spawn_manager()
+	economy_manager = game_manager.get_economy_manager()
+
+
+func start_service() -> void:
+	await get_tree().create_timer(current_masseur.base_service_time, false).timeout
+	
+	economy_manager.set_revenue(current_masseur.base_service_cost)
+	toggle_client_display(null)
 
 
 func set_availability(state: bool) -> void:
@@ -90,6 +99,8 @@ func toggle_client_display(client: ClientData) -> void:
 	
 	client_sprite.region_rect.position = client.atlas_coords * Entities.SPRITE_DIMENSIONS
 	current_client = client
+	
+	await start_service()
 
 
 func _unhandled_input(event: InputEvent) -> void:

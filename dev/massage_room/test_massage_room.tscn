@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://tndcych5ayib"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_i73bk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geniv"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.3215499, 0.1810278, 0.13517469, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hc1u"]
+bg_color = Color(0.44313726, 0.25882354, 0.16862746, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg3ii"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.32019654, 0.15775636, 0.09332653, 0.45882353)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b8wyb"]
+bg_color = Color(0.27278775, 0.15405908, 0.13940668, 0.654902)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g02y"]
+size = Vector2(64, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjdyr"]
+size = Vector2(192, 256)
+
+[node name="TestMassageRoom" type="Node2D" unique_id=309402537]
+
+[node name="FloorBorder" type="PanelContainer" parent="." unique_id=1328161084]
+custom_minimum_size = Vector2(192, 256)
+offset_right = 192.0
+offset_bottom = 256.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_geniv")
+
+[node name="Floor" type="Panel" parent="FloorBorder" unique_id=2140651018]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6hc1u")
+
+[node name="MasseurDisplay" type="Node2D" parent="." unique_id=1291883187]
+
+[node name="ShadowBorder" type="PanelContainer" parent="MasseurDisplay" unique_id=24993131]
+offset_left = -32.0
+offset_top = 264.0
+offset_right = 32.0
+offset_bottom = 296.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fg3ii")
+
+[node name="Shadow" type="Panel" parent="MasseurDisplay/ShadowBorder" unique_id=249473193]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b8wyb")
+
+[node name="MasseurSprite" type="Sprite2D" parent="MasseurDisplay" unique_id=1864113957]
+position = Vector2(0, 207.99998)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_i73bk")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 416)
+
+[node name="ClientDisplay" type="Node2D" parent="." unique_id=1371911217]
+visible = false
+
+[node name="ShadowBorder" type="PanelContainer" parent="ClientDisplay" unique_id=814929585]
+offset_left = 64.0
+offset_top = 176.0
+offset_right = 128.0
+offset_bottom = 208.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fg3ii")
+
+[node name="Shadow" type="Panel" parent="ClientDisplay/ShadowBorder" unique_id=1370609431]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b8wyb")
+
+[node name="ClientSprite" type="Sprite2D" parent="ClientDisplay" unique_id=734527470]
+position = Vector2(96, 112)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_i73bk")
+region_enabled = true
+region_rect = Rect2(0, 416, 256, 416)
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=886405346]
+
+[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=462730103]
+position = Vector2(0, 212)
+shape = SubResource("RectangleShape2D_5g02y")
+
+[node name="AssignmentArea" type="Area2D" parent="." unique_id=406829857]
+
+[node name="AssignmentZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=458124674]
+position = Vector2(96, 128)
+shape = SubResource("RectangleShape2D_bjdyr")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cwj3t032km0wa"]
+
+[ext_resource type="PackedScene" uid="uid://tndcych5ayib" path="res://dev/massage_room/test_massage_room.tscn" id="1_6cv02"]
+[ext_resource type="Script" uid="uid://byl0ggoq64bha" path="res://dev/playground/playground.gd" id="1_pbhfy"]
+[ext_resource type="PackedScene" uid="uid://bqn6fchf305vr" path="res://dev/test_client/test_client.tscn" id="2_pjjmp"]
+[ext_resource type="Script" uid="uid://b123fnyhs4ht" path="res://dev/massage_room/test_massage_room.gd" id="3_0fp8n"]
+[ext_resource type="Script" uid="uid://bccxfn0ouj5xg" path="res://dev/test_client/test_client.gd" id="5_i8twi"]
+
+[node name="Playground" type="Node2D" unique_id=1774364506]
+script = ExtResource("1_pbhfy")
+
+[node name="TestMassageRoom" parent="." unique_id=309402537 instance=ExtResource("1_6cv02")]
+position = Vector2(328, 208)
+script = ExtResource("3_0fp8n")
+
+[node name="TestClient" parent="." unique_id=281682511 instance=ExtResource("2_pjjmp")]
+position = Vector2(824, 208)
+script = ExtResource("5_i8twi")

@@ -174,3 +174,13 @@ func get_current_debug_scene() -> Node:
 
 func unload_current_pause_scene() -> void:
 	current_pause_scene = null
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug"):
+		var menu_scene = get_current_menu_scene()
+		menu_scene.queue_free()
+		
+		await menu_scene.tree_exited
+		
+		load_to_menu_node("res://dev/main_menu/test_main_menu.tscn")

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bywhsd35wg5w6"]
+
+[ext_resource type="Script" uid="uid://cyb2l8tutlg2t" path="res://debug/overlay/masseur_info/masseur_info.gd" id="1_caan1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="MasseurInfo" type="PanelContainer" unique_id=868203825]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 910.0
+offset_bottom = 171.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+script = ExtResource("1_caan1")
+
+[node name="Statistics" type="VBoxContainer" parent="." unique_id=661679795]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ID" type="Label" parent="Statistics" unique_id=2143564759]
+layout_mode = 2
+text = "Masseur ID: <null>"
+
+[node name="Systems" type="HBoxContainer" parent="Statistics" unique_id=1249498028]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Service" type="VBoxContainer" parent="Statistics/Systems" unique_id=2023940842]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Time" type="Label" parent="Statistics/Systems/Service" unique_id=773577807]
+layout_mode = 2
+text = "Base Service Time: <null>"
+
+[node name="Cost" type="Label" parent="Statistics/Systems/Service" unique_id=2144148153]
+layout_mode = 2
+text = "Base Service Cost: <null>"
+
+[node name="Cost2" type="Label" parent="Statistics/Systems/Service" unique_id=2042974867]
+layout_mode = 2
+text = "Base Speciality Bonus: <null>"
+
+[node name="Energy" type="VBoxContainer" parent="Statistics/Systems" unique_id=240657846]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Max" type="Label" parent="Statistics/Systems/Energy" unique_id=928220294]
+layout_mode = 2
+text = "Base Max Energy: <null>"
+
+[node name="Gain" type="Label" parent="Statistics/Systems/Energy" unique_id=1329870701]
+layout_mode = 2
+text = "Base Energy Gain: <null>"
+
+[node name="Cost" type="Label" parent="Statistics/Systems/Energy" unique_id=587212651]
+layout_mode = 2
+text = "Base Energy Cost: <null>"
+
+[node name="Refill" type="Label" parent="Statistics/Systems/Energy" unique_id=386387246]
+layout_mode = 2
+text = "Base Refill Time: <null>"
+
+[node name="Affinity" type="VBoxContainer" parent="Statistics/Systems" unique_id=139263242]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Time" type="Label" parent="Statistics/Systems/Affinity" unique_id=994998830]
+layout_mode = 2
+text = "Base Affinity Yield: <null>"
+
+[node name="Cost" type="Label" parent="Statistics/Systems/Affinity" unique_id=485118393]
+layout_mode = 2
+text = "Base Affinity Bonus: <null>"
+
+[node name="Relief" type="VBoxContainer" parent="Statistics/Systems" unique_id=549371522]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Max" type="Label" parent="Statistics/Systems/Relief" unique_id=1325235032]
+layout_mode = 2
+text = "Base Relief Chance: <null>"
+
+[node name="Gain" type="Label" parent="Statistics/Systems/Relief" unique_id=499647173]
+layout_mode = 2
+text = "Base Relief Time: <null>"
+
+[node name="Cost" type="Label" parent="Statistics/Systems/Relief" unique_id=1399197370]
+layout_mode = 2
+text = "Base Relief Bonus: <null>"
+
+[node name="Refill" type="Label" parent="Statistics/Systems/Relief" unique_id=793123598]
+layout_mode = 2
+text = "Base Relief Cost: <null>"

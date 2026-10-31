@@ -11,6 +11,7 @@ class GameTime extends RefCounted:
 	var hour: int = 0
 	var shift: String = Shift.MORNING
 
+@export var economy_manager: EconomyManager
 @export var event_manager: EventManager
 @export var service_manager: ServiceManager
 @export var spawn_manager: SpawnManager
@@ -49,6 +50,10 @@ func start_shift() -> void:
 func end_shift() -> void:
 	await get_tree().create_timer(5).timeout
 	pass
+
+
+func get_economy_manager() -> EconomyManager:
+	return economy_manager
 
 
 func get_service_manager() -> ServiceManager:

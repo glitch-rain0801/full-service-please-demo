@@ -24,7 +24,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="GameHUD" type="PanelContainer" unique_id=804245698 node_paths=PackedStringArray("order_container")]
+[node name="GameHUD" type="PanelContainer" unique_id=804245698 node_paths=PackedStringArray("coin_label", "order_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,6 +33,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
 script = ExtResource("1_iq117")
+coin_label = NodePath("VBoxContainer/Header/ProgressDisplay/HBoxContainer/Coins/HBoxContainer/CoinAmount")
 order_container = NodePath("VBoxContainer/SideNav/OrderContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=675727717]

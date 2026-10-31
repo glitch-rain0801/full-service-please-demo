@@ -1,0 +1,364 @@
+[gd_scene format=3 uid="uid://csqokgkissicv"]
+
+[ext_resource type="PackedScene" uid="uid://bywhsd35wg5w6" path="res://debug/overlay/masseur_info/masseur_info.tscn" id="1_o8l47"]
+[ext_resource type="PackedScene" uid="uid://c43gyjpa45l2n" path="res://debug/overlay/stat_override/masseur_stat_override.tscn" id="2_1wnsk"]
+[ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="2_m6r5e"]
+[ext_resource type="Script" uid="uid://dxwsksnlwuwpr" path="res://debug/overlay/flags_override/client_flags.gd" id="4_xkqme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fssx7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_rug7b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o8l47"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkqme"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="TestOverlay" type="Control" unique_id=2036527735 groups=["test_overlay"]]
+custom_minimum_size = Vector2(1344, 832)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1344.0
+mouse_filter = 2
+
+[node name="MasseurInfo" parent="." unique_id=868203825 instance=ExtResource("1_o8l47")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 918.0
+offset_bottom = 187.0
+
+[node name="MasseurSelect" type="PanelContainer" parent="." unique_id=480272196]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 216.0
+offset_right = 267.0
+offset_bottom = 455.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MasseurSelect" unique_id=1397003148]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MasseurSelect/VBoxContainer" unique_id=1558849127]
+layout_mode = 2
+text = "Select Masseur"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MasseurSelect/VBoxContainer" unique_id=1542300001]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MasseurSelect/VBoxContainer/HBoxContainer" unique_id=295499527]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Kovit" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons" unique_id=516200397]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Kovit"
+
+[node name="Rald" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons" unique_id=83022701]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Rald"
+
+[node name="Remi" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons" unique_id=889337677]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Remi"
+
+[node name="Sota" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons" unique_id=401512496]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Sota"
+
+[node name="Buttons2" type="VBoxContainer" parent="MasseurSelect/VBoxContainer/HBoxContainer" unique_id=1456257826]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Lenga" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons2" unique_id=2060691613]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Lenga"
+
+[node name="Okan" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons2" unique_id=170575834]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Okan"
+
+[node name="Oki" type="Button" parent="MasseurSelect/VBoxContainer/HBoxContainer/Buttons2" unique_id=592039053]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_rug7b")
+text = "Oki"
+
+[node name="MasseurStatOverride" parent="." unique_id=342253272 instance=ExtResource("2_1wnsk")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 512.0
+offset_right = 778.0
+offset_bottom = 810.0
+offset_transform_position = Vector2(0, 272)
+offset_transform_visual_only = false
+
+[node name="RoomMetrics" type="PanelContainer" parent="." unique_id=926464080]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 0
+offset_left = 936.0
+offset_top = 24.0
+offset_right = 1192.0
+offset_bottom = 188.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8l47")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RoomMetrics" unique_id=909700907]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="RoomMetrics/VBoxContainer" unique_id=1870665135]
+layout_mode = 2
+text = "Room Stats:"
+
+[node name="Info" type="VBoxContainer" parent="RoomMetrics/VBoxContainer" unique_id=933489590]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="State" type="Label" parent="RoomMetrics/VBoxContainer/Info" unique_id=2051545123]
+layout_mode = 2
+text = "State: <null>"
+
+[node name="Duration" type="Label" parent="RoomMetrics/VBoxContainer/Info" unique_id=1493375455]
+layout_mode = 2
+text = "Duration: <null>"
+
+[node name="Action" type="Label" parent="RoomMetrics/VBoxContainer/Info" unique_id=1073646407]
+layout_mode = 2
+size_flags_vertical = 10
+text = "<No Action>"
+
+[node name="ClientOptions" type="PanelContainer" parent="." unique_id=1206382832]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 256.0
+offset_right = 1327.0
+offset_bottom = 327.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkqme")
+
+[node name="OptionButton" type="OptionButton" parent="ClientOptions" unique_id=294484669]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+selected = 0
+item_count = 16
+popup/item_0/text = "Select Client"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "Regular"
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/text = "Black"
+popup/item_2/id = 2
+popup/item_3/text = "White"
+popup/item_3/id = 3
+popup/item_4/text = "Special"
+popup/item_4/id = 4
+popup/item_4/separator = true
+popup/item_5/text = "Burton"
+popup/item_5/id = 5
+popup/item_6/text = "Haruo"
+popup/item_6/id = 6
+popup/item_7/text = "Hunter"
+popup/item_7/id = 7
+popup/item_8/text = "Evan"
+popup/item_8/id = 8
+popup/item_9/text = "Jacob"
+popup/item_9/id = 9
+popup/item_10/text = "John"
+popup/item_10/id = 10
+popup/item_11/text = "Ken"
+popup/item_11/id = 11
+popup/item_12/text = "Keoni"
+popup/item_12/id = 12
+popup/item_13/text = "Rudolf"
+popup/item_13/id = 13
+popup/item_14/text = "Tomoki"
+popup/item_14/id = 14
+popup/item_15/text = "Xavier"
+popup/item_15/id = 15
+
+[node name="ClientFlags" type="PanelContainer" parent="." unique_id=2134356904 node_paths=PackedStringArray("toggle_button")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 0
+offset_left = 872.0
+offset_top = 512.0
+offset_right = 1338.0
+offset_bottom = 747.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 272)
+offset_transform_visual_only = false
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o8l47")
+script = ExtResource("4_xkqme")
+toggle_button = NodePath("Anchor/Toggle")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ClientFlags" unique_id=1559413422]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ClientFlags/VBoxContainer" unique_id=849015189]
+layout_mode = 2
+text = "Client Flags"
+
+[node name="Columns" type="HBoxContainer" parent="ClientFlags/VBoxContainer" unique_id=1151727782]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Overrides" type="VBoxContainer" parent="ClientFlags/VBoxContainer/Columns" unique_id=2018889451]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="ClientFlags/VBoxContainer/Columns/Overrides" unique_id=629498835]
+layout_mode = 2
+text = "Overrides"
+
+[node name="SexPref" type="Button" parent="ClientFlags/VBoxContainer/Columns/Overrides" unique_id=1331741792]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+theme_override_font_sizes/font_size = 13
+text = "Top"
+
+[node name="Speciality" type="Button" parent="ClientFlags/VBoxContainer/Columns/Overrides" unique_id=1374970900]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+theme_override_font_sizes/font_size = 13
+text = "Guarantee Speciality Check"
+
+[node name="Affinity" type="Button" parent="ClientFlags/VBoxContainer/Columns/Overrides" unique_id=975682876]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+theme_override_font_sizes/font_size = 13
+text = "Guarantee Affinity Check"
+
+[node name="Relief" type="Button" parent="ClientFlags/VBoxContainer/Columns/Overrides" unique_id=337291683]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+theme_override_font_sizes/font_size = 13
+text = "Guarantee Relief Check"
+
+[node name="Column2" type="VBoxContainer" parent="ClientFlags/VBoxContainer/Columns" unique_id=1032915662]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Affinity" type="HBoxContainer" parent="ClientFlags/VBoxContainer/Columns/Column2" unique_id=1247625453]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ClientFlags/VBoxContainer/Columns/Column2/Affinity" unique_id=1896819801]
+layout_mode = 2
+text = "Affinity*"
+
+[node name="Affinity" type="TextEdit" parent="ClientFlags/VBoxContainer/Columns/Column2/Affinity" unique_id=1521141763]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+mouse_filter = 1
+text = "1.0"
+
+[node name="Label" type="Label" parent="ClientFlags/VBoxContainer/Columns/Column2" unique_id=903517624]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "* for current masseur"
+
+[node name="Button" type="Button" parent="ClientFlags/VBoxContainer/Columns/Column2" unique_id=1740669161]
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+theme_override_font_sizes/font_size = 13
+text = "Reset"
+
+[node name="Anchor" type="Control" parent="ClientFlags" unique_id=45524819]
+z_index = -1
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Toggle" type="Button" parent="ClientFlags/Anchor" unique_id=453429723]
+layout_mode = 0
+offset_top = -48.0
+offset_right = 106.0
+offset_bottom = -9.0
+mouse_filter = 1
+theme = ExtResource("2_m6r5e")
+text = "Show"
+
+[connection signal="pressed" from="ClientFlags/Anchor/Toggle" to="ClientFlags" method="_on_toggle_pressed"]
