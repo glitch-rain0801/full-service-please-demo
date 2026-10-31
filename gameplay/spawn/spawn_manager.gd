@@ -2,9 +2,14 @@ extends Node
 class_name SpawnManager
 
 signal queue_updated
+signal ghost_freed(entity: Variant, requesting_node: Variant, new_room: MassageRoom)
 
 const QUEUE_START_COORDS: Vector2 = Vector2(4.2, 6)
 const GRID_SIZE: Vector2 = Vector2(64.0, 64.0)
+
+func _ready() -> void:
+	ghost_freed.connect(Callable(self, "_on_ghost_freed"))
+
 
 func spawn_random(number: int, include_regulars: bool = false, include_special: bool = false) -> void:
 	for i in range(number):
@@ -30,8 +35,17 @@ func spawn_scripted() -> void:
 	pass
 
 
-func spawn_ghost() -> void:
-	pass
+func spawn_ghost(entity_id: String, node: Variant) -> void:
+	var entity: Variant = Entities.masseurs[entity_id] \
+	if entity_id in Entities.masseurs else Entities.clients[entity_id]
+	
+	Global.main.load_to_entities_node(
+		"res://entities/ghost/ghost.tscn",
+		{ 
+			"entity": entity,
+			"requesting_node": node
+		}
+	)
 
 
 func spawn_waves(number: int) -> void:
@@ -40,11 +54,20 @@ func spawn_waves(number: int) -> void:
 		await get_tree().create_timer(5).timeout
 
 
+func free_ghost() -> void:
+	var ghost: Ghost = Global.main.get_current_entity_scene()
+	if ghost is not Ghost:
+		push_error("Returned node is not of class 'Ghost'")
+		return
+	
+	ghost.queue_free()
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		var world_map: WorldMap = Global.main.get_current_world_scene()
 		if world_map is not WorldMap:
-			push_error("Returned node is not of class 'WorldMap' in SpawnManager")
+			push_error("Returned node is not of class 'WorldMap'.")
 			return
 		
 		if world_map.get_map_coords_key() != "lounge_area":
@@ -59,10 +82,37 @@ func _unhandled_input(event: InputEvent) -> void:
 		if entity.queue_no.is_equal_approx(QUEUE_START_COORDS * GRID_SIZE):
 			if entity.moving:
 				return
+			var game_hud = Global.main.get_current_hud_scene()
+			if game_hud is not GameHUD:
+				push_error("Returned node is not of type 'GameHUD'")
+				return
+			
+			game_hud.load_to_orders(entity)
 			entity.queue_free()
 		
 		queue_updated.emit()
 
+
+func _on_ghost_freed(entity: Variant, requesting_node: Variant, new_room: MassageRoom) -> void:
+	var new_masseur: MasseurData = null
+	
+	if new_room:
+		new_masseur = new_room.current_masseur
+		
+		if entity is MasseurData and new_room != requesting_node:
+			new_room.toggle_masseur_display(entity)
+		
+		if entity is ClientData:
+			new_room.toggle_client_display(entity)
+	
+	if requesting_node is MassageRoom:
+		if new_room == requesting_node:
+			return
+		
+		requesting_node.toggle_masseur_display(new_masseur)
+	elif requesting_node is ClientOrderCard:
+		if new_room:
+			requesting_node.queue_free()
 
 func _set_client_pool(include_special: bool) -> Array:
 	var client_pool: Array = []

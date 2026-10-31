@@ -297,4 +297,8 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 21
 text = "Unavailable"
 
+[connection signal="mouse_entered" from="PickupArea" to="." method="_on_pickup_area_mouse_entered"]
+[connection signal="mouse_exited" from="PickupArea" to="." method="_on_pickup_area_mouse_exited"]
+[connection signal="body_entered" from="AssignmentArea" to="." method="_on_assignment_area_body_entered"]
+[connection signal="body_exited" from="AssignmentArea" to="." method="_on_assignment_area_body_exited"]
 [connection signal="pressed" from="Barrier/AssignMasseur/VBoxContainer/Assign" to="." method="_on_assign_pressed"]

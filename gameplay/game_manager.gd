@@ -28,7 +28,8 @@ func start_week() -> void:
 		return
 	
 	var service_area: ServiceArea = world_map.get_service_area()
-	service_area.set_useable_rooms(time.week)
+	service_area.set_usable_rooms(time.week)
+	service_manager.set_usable_masseurs(time.week)
 	
 	for i in range(7):
 		await start_shift()

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dhcja4e08wuig"]
+
+[ext_resource type="Texture2D" uid="uid://c4r46dsycq2tr" path="res://assets/icons/icon.svg" id="1_70d74"]
+[ext_resource type="Script" uid="uid://do3qgpe0sbkfx" path="res://ui/client_order_card/client_order_card.gd" id="1_e3yn1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ul4"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0.63529414, 0.9607843, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fssx7"]
+size = Vector2(288, 160)
+
+[node name="ClientOrderCard" type="PanelContainer" unique_id=1615429607]
+custom_minimum_size = Vector2(288, 124)
+offset_transform_enabled = true
+offset_transform_position = Vector2(288, 0)
+offset_transform_visual_only = false
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_62ul4")
+script = ExtResource("1_e3yn1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=423143955]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=186472258]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Picture" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=220249407]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_70d74")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=687629672]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Client Name "
+
+[node name="PickupArea" type="Area2D" parent="." unique_id=972891963]
+
+[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=509358543]
+position = Vector2(144, 80)
+shape = SubResource("RectangleShape2D_fssx7")
+
+[connection signal="mouse_entered" from="PickupArea" to="." method="_on_pickup_area_mouse_entered"]
+[connection signal="mouse_exited" from="PickupArea" to="." method="_on_pickup_area_mouse_exited"]

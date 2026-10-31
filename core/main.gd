@@ -57,7 +57,16 @@ func load_to_entities_node(scene_path: String, params: Dictionary = {}) -> void:
 			new_scene.client_data = params["client_data"]
 			new_scene.preferred_masseur = params["preferred_masseur"]
 			new_scene.queue_no = params["queue_no"]
-		else: # ghost logic
+		elif new_scene is Ghost:
+			if (
+				not params.has("entity")
+				or not params.has("requesting_node")
+			):
+				push_error("incomplete 'Client' parameter declarations")
+				return
+			
+			new_scene.entity = params["entity"]
+			new_scene.requesting_node = params["requesting_node"]
 			current_entity_scene = new_scene
 	
 	entities_node.add_child(new_scene)

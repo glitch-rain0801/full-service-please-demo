@@ -7,6 +7,7 @@ signal masseur_selected(masseur_name: String)
 @export var name_label: Label
 @export var tag_label: Label
 @export var desc_label: RichTextLabel
+@export var select_button: Button
 @export var image: TextureRect
 @export var stats_page: Control 
 
@@ -51,6 +52,11 @@ func _play_intro_trans() -> void:
 	name_label.text = masseur.name
 	tag_label.text = masseur.tag
 	desc_label.text = masseur.description
+	
+	if masseur.active:
+		select_button.disabled = true
+		select_button.text = "Active"
+	
 	
 	image.offset_transform_position = IMG_START_POS
 	stats_page.offset_transform_position = STAT_START_POS
@@ -102,6 +108,17 @@ func _update_ui(masseur_name: String) -> void:
 	tag_label.text = masseur.tag
 	desc_label.text = masseur.description
 	
+	if not masseur.unlocked or masseur.active:
+		select_button.disabled = true
+		
+		if masseur.active:
+			select_button.text = "Active"
+		else:
+			select_button.text = "Locked"
+	else:
+		select_button.disabled = false
+		select_button.text = "Select"
+	
 	image.offset_transform_position = IMG_START_POS
 	stats_page.offset_transform_position = STAT_START_POS
 	
@@ -146,6 +163,6 @@ func _on_select_pressed() -> void:
 
 
 func _on_cancel_pressed() -> void:
-	masseur_selected.emit(null)
+	masseur_selected.emit("")
 	Global.main.unload_current_pause_scene()
 	queue_free()

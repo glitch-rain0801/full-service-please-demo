@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://y2j1d5lkehex"]
+
+[ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_81wdg"]
+[ext_resource type="Script" uid="uid://cq5r2ibskqlnv" path="res://entities/ghost/ghost.gd" id="1_pmbno"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fssx7"]
+
+[node name="Ghost" type="CharacterBody2D" unique_id=1934705962 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_pmbno")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=199200704]
+self_modulate = Color(1, 1, 1, 0.6666667)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_81wdg")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1994648155]
+shape = SubResource("CapsuleShape2D_fssx7")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

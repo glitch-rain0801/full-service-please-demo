@@ -22,7 +22,7 @@ shader_parameter/fade_center_y = 0.5410000256975
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_rx718"]
 
-[node name="AssignMasseurUI" type="PanelContainer" unique_id=1987918500 node_paths=PackedStringArray("masseur_buttons", "name_label", "tag_label", "desc_label", "image", "stats_page")]
+[node name="AssignMasseurUI" type="PanelContainer" unique_id=1987918500 node_paths=PackedStringArray("masseur_buttons", "name_label", "tag_label", "desc_label", "select_button", "image", "stats_page")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -35,6 +35,7 @@ masseur_buttons = NodePath("MainPanel/ImageControl/Cycle")
 name_label = NodePath("MainPanel/MarginContainer/Statistics/Identity/Name")
 tag_label = NodePath("MainPanel/MarginContainer/Statistics/Identity/Tag")
 desc_label = NodePath("MainPanel/MarginContainer/Statistics/Description")
+select_button = NodePath("MainPanel/MarginContainer/Statistics/Actions/Select")
 image = NodePath("MainPanel/ImageControl/ImageAnchor/Image")
 stats_page = NodePath("MainPanel/MarginContainer/Statistics")
 

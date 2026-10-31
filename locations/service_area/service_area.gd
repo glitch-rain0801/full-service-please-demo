@@ -3,7 +3,7 @@ class_name ServiceArea
 
 @export var massage_rooms: Node2D
 
-func set_useable_rooms(week: int) -> void:
+func set_usable_rooms(week: int) -> void:
 	var count: int = 0
 	for room: MassageRoom in massage_rooms.get_children():
 		if week <=2 and count >= 4:
@@ -14,3 +14,6 @@ func set_useable_rooms(week: int) -> void:
 			room.set_availability(true)
 		
 		count += 1
+
+func get_rooms() -> Array:
+	return massage_rooms.get_children()

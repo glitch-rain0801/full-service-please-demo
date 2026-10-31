@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c13pill7dx8nw"]
 
+[ext_resource type="Script" uid="uid://iw3bfo6catj4" path="res://ui/game_hud/game_hud.gd" id="1_iq117"]
 [ext_resource type="Texture2D" uid="uid://c4r46dsycq2tr" path="res://assets/icons/icon.svg" id="1_l7n28"]
 [ext_resource type="Theme" uid="uid://dwwfofsdtbxqw" path="res://assets/themes/debug_theme.tres" id="1_ylh68"]
 
@@ -23,7 +24,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="GameHUD" type="PanelContainer" unique_id=804245698]
+[node name="GameHUD" type="PanelContainer" unique_id=804245698 node_paths=PackedStringArray("order_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,10 +32,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fssx7")
+script = ExtResource("1_iq117")
+order_container = NodePath("VBoxContainer/SideNav/OrderContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=675727717]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 32
 
 [node name="Header" type="HBoxContainer" parent="VBoxContainer" unique_id=1227609852]
 layout_mode = 2
@@ -153,7 +157,13 @@ text = "Menu"
 
 [node name="SideNav" type="HBoxContainer" parent="VBoxContainer" unique_id=138672016]
 layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="OrderContainer" type="VBoxContainer" parent="VBoxContainer/SideNav" unique_id=1376932954]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 16
 
 [node name="Footer" type="HBoxContainer" parent="VBoxContainer" unique_id=852648805]
 layout_mode = 2

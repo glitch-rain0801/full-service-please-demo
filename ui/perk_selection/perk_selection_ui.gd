@@ -56,4 +56,5 @@ func set_selected_perk(perk: PerkChoice) -> void:
 
 func _on_confirm_pressed() -> void:
 	perk_selected.emit(selected_perk)
+	Global.main.unload_current_pause_scene()
 	queue_free()
