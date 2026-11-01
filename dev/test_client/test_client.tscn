@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqn6fchf305vr"]
 
 [ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_kme02"]
+[ext_resource type="Script" uid="uid://bccxfn0ouj5xg" path="res://dev/test_client/test_client.gd" id="1_wdrr3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ett13"]
 content_margin_left = 8.0
@@ -43,7 +44,11 @@ corner_detail = 20
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kme02"]
 size = Vector2(192, 256)
 
-[node name="TestClient" type="Node2D" unique_id=281682511]
+[node name="TestClient" type="Node2D" unique_id=281682511 node_paths=PackedStringArray("client_display", "client_sprite", "pickup_zone")]
+script = ExtResource("1_wdrr3")
+client_display = NodePath("ClientDisplay")
+client_sprite = NodePath("ClientDisplay/ClientSprite")
+pickup_zone = NodePath("PickupArea/PickupZone")
 
 [node name="FloorBorder" type="PanelContainer" parent="." unique_id=128004611]
 custom_minimum_size = Vector2(192, 256)
@@ -79,8 +84,11 @@ texture = ExtResource("1_kme02")
 region_enabled = true
 region_rect = Rect2(0, 416, 256, 416)
 
-[node name="AssignmentArea" type="Area2D" parent="." unique_id=1594811415]
+[node name="PickupArea" type="Area2D" parent="." unique_id=1594811415]
 
-[node name="AssignmentZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=288527511]
+[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=288527511]
 position = Vector2(96, 128)
 shape = SubResource("RectangleShape2D_kme02")
+
+[connection signal="mouse_entered" from="PickupArea" to="." method="_on_pickup_area_mouse_entered"]
+[connection signal="mouse_exited" from="PickupArea" to="." method="_on_pickup_area_mouse_exited"]

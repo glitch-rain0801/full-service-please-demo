@@ -17,7 +17,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="MasseurInfo" type="PanelContainer" unique_id=868203825]
+[node name="MasseurInfo" type="PanelContainer" unique_id=868203825 node_paths=PackedStringArray("id_label", "service_time_label", "service_cost_label", "speciality_bonus_label", "max_energy_label", "energy_gain_label", "energy_cost_label", "refill_time_label", "affinity_yield_label", "affinity_bonus_label", "relief_chance_label", "relief_time_label", "relief_bonus_label", "relief_cost_label")]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 910.0
@@ -25,6 +25,20 @@ offset_bottom = 171.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fssx7")
 script = ExtResource("1_caan1")
+id_label = NodePath("Statistics/ID")
+service_time_label = NodePath("Statistics/Systems/Service/Time")
+service_cost_label = NodePath("Statistics/Systems/Service/Cost")
+speciality_bonus_label = NodePath("Statistics/Systems/Service/Speciality")
+max_energy_label = NodePath("Statistics/Systems/Energy/Max")
+energy_gain_label = NodePath("Statistics/Systems/Energy/Gain")
+energy_cost_label = NodePath("Statistics/Systems/Energy/Cost")
+refill_time_label = NodePath("Statistics/Systems/Energy/Refill")
+affinity_yield_label = NodePath("Statistics/Systems/Affinity/Yield")
+affinity_bonus_label = NodePath("Statistics/Systems/Affinity/Bonus")
+relief_chance_label = NodePath("Statistics/Systems/Relief/Chance")
+relief_time_label = NodePath("Statistics/Systems/Relief/Time")
+relief_bonus_label = NodePath("Statistics/Systems/Relief/Bonus")
+relief_cost_label = NodePath("Statistics/Systems/Relief/Cost")
 
 [node name="Statistics" type="VBoxContainer" parent="." unique_id=661679795]
 layout_mode = 2
@@ -32,7 +46,7 @@ mouse_filter = 2
 
 [node name="ID" type="Label" parent="Statistics" unique_id=2143564759]
 layout_mode = 2
-text = "Masseur ID: <null>"
+text = "Masseur Name: <null>"
 
 [node name="Systems" type="HBoxContainer" parent="Statistics" unique_id=1249498028]
 layout_mode = 2
@@ -41,68 +55,72 @@ theme_override_constants/separation = 16
 
 [node name="Service" type="VBoxContainer" parent="Statistics/Systems" unique_id=2023940842]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="Time" type="Label" parent="Statistics/Systems/Service" unique_id=773577807]
 layout_mode = 2
-text = "Base Service Time: <null>"
+text = "Service Time: <null>"
 
 [node name="Cost" type="Label" parent="Statistics/Systems/Service" unique_id=2144148153]
 layout_mode = 2
-text = "Base Service Cost: <null>"
+text = "Service Cost: <null>"
 
-[node name="Cost2" type="Label" parent="Statistics/Systems/Service" unique_id=2042974867]
+[node name="Speciality" type="Label" parent="Statistics/Systems/Service" unique_id=2042974867]
 layout_mode = 2
-text = "Base Speciality Bonus: <null>"
+text = "Speciality Bonus: <null>"
 
 [node name="Energy" type="VBoxContainer" parent="Statistics/Systems" unique_id=240657846]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
 [node name="Max" type="Label" parent="Statistics/Systems/Energy" unique_id=928220294]
 layout_mode = 2
-text = "Base Max Energy: <null>"
+text = "Max Energy: <null>"
 
 [node name="Gain" type="Label" parent="Statistics/Systems/Energy" unique_id=1329870701]
 layout_mode = 2
-text = "Base Energy Gain: <null>"
+text = "Energy Gain: <null>"
 
 [node name="Cost" type="Label" parent="Statistics/Systems/Energy" unique_id=587212651]
 layout_mode = 2
-text = "Base Energy Cost: <null>"
+text = "Energy Cost: <null>"
 
 [node name="Refill" type="Label" parent="Statistics/Systems/Energy" unique_id=386387246]
 layout_mode = 2
-text = "Base Refill Time: <null>"
+text = "Refill Time: <null>"
 
 [node name="Affinity" type="VBoxContainer" parent="Statistics/Systems" unique_id=139263242]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="Time" type="Label" parent="Statistics/Systems/Affinity" unique_id=994998830]
+[node name="Yield" type="Label" parent="Statistics/Systems/Affinity" unique_id=994998830]
 layout_mode = 2
-text = "Base Affinity Yield: <null>"
+text = "Affinity Yield: <null>"
 
-[node name="Cost" type="Label" parent="Statistics/Systems/Affinity" unique_id=485118393]
+[node name="Bonus" type="Label" parent="Statistics/Systems/Affinity" unique_id=485118393]
 layout_mode = 2
-text = "Base Affinity Bonus: <null>"
+text = "Affinity Bonus: <null>"
 
 [node name="Relief" type="VBoxContainer" parent="Statistics/Systems" unique_id=549371522]
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 2
 
-[node name="Max" type="Label" parent="Statistics/Systems/Relief" unique_id=1325235032]
+[node name="Chance" type="Label" parent="Statistics/Systems/Relief" unique_id=1325235032]
 layout_mode = 2
-text = "Base Relief Chance: <null>"
+text = "Relief Chance: <null>"
 
-[node name="Gain" type="Label" parent="Statistics/Systems/Relief" unique_id=499647173]
+[node name="Time" type="Label" parent="Statistics/Systems/Relief" unique_id=499647173]
 layout_mode = 2
-text = "Base Relief Time: <null>"
+text = "Relief Time: <null>"
 
-[node name="Cost" type="Label" parent="Statistics/Systems/Relief" unique_id=1399197370]
+[node name="Bonus" type="Label" parent="Statistics/Systems/Relief" unique_id=1399197370]
 layout_mode = 2
-text = "Base Relief Bonus: <null>"
+text = "Relief Bonus: <null>"
 
-[node name="Refill" type="Label" parent="Statistics/Systems/Relief" unique_id=793123598]
+[node name="Cost" type="Label" parent="Statistics/Systems/Relief" unique_id=793123598]
 layout_mode = 2
-text = "Base Relief Cost: <null>"
+text = "Relief Cost: <null>"

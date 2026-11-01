@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ClientData" format=3 uid="uid://b14v085m8pa1t"]
+
+[ext_resource type="Script" uid="uid://il025n8myglq" path="res://data/entity_def/client_data.gd" id="1_jcy70"]
+
+[resource]
+script = ExtResource("1_jcy70")
+id = "tomoki"
+name = "Tomoki Nakamoto"
+atlas_coords = Vector2(2, 1)
+is_special = true
+spawn_weight = 1.0
+neutral_affinity = 1.0
+affinity_tree = Dictionary[String, float]({
+"kovit": 10.0,
+"lenga": 10.0,
+"okan": 10.0,
+"oki": 10.0,
+"rald": 10.0,
+"remi": 10.0,
+"sota": 10.0
+})
+metadata/_custom_type_script = "uid://il025n8myglq"

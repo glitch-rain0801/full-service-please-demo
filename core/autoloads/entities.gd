@@ -21,7 +21,7 @@ var clients: Dictionary = {
 	#"shota_white": null,
 	"twink_black": null,
 	"twink_white": null,
-	"tomoki": null,
+	"tomoki": preload("res://entities/clients/tomoki/tomoki_stats.tres"),
 	"burton": null,
 	"evan": null,
 	"haruo": null,

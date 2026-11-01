@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://tndcych5ayib"]
 
+[ext_resource type="Script" uid="uid://b123fnyhs4ht" path="res://dev/massage_room/test_massage_room.gd" id="1_28ifm"]
 [ext_resource type="Texture2D" uid="uid://dg6ayh1psp2om" path="res://assets/textures/character_spritesheet.png" id="1_i73bk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geniv"]
@@ -40,13 +41,14 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 corner_detail = 20
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g02y"]
-size = Vector2(64, 168)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjdyr"]
 size = Vector2(192, 256)
 
-[node name="TestMassageRoom" type="Node2D" unique_id=309402537]
+[node name="TestMassageRoom" type="Node2D" unique_id=309402537 node_paths=PackedStringArray("masseur_sprite", "client_display", "client_sprite")]
+script = ExtResource("1_28ifm")
+masseur_sprite = NodePath("MasseurDisplay/MasseurSprite")
+client_display = NodePath("ClientDisplay")
+client_sprite = NodePath("ClientDisplay/ClientSprite")
 
 [node name="FloorBorder" type="PanelContainer" parent="." unique_id=1328161084]
 custom_minimum_size = Vector2(192, 256)
@@ -105,14 +107,11 @@ texture = ExtResource("1_i73bk")
 region_enabled = true
 region_rect = Rect2(0, 416, 256, 416)
 
-[node name="PickupArea" type="Area2D" parent="." unique_id=886405346]
-
-[node name="PickupZone" type="CollisionShape2D" parent="PickupArea" unique_id=462730103]
-position = Vector2(0, 212)
-shape = SubResource("RectangleShape2D_5g02y")
-
 [node name="AssignmentArea" type="Area2D" parent="." unique_id=406829857]
 
 [node name="AssignmentZone" type="CollisionShape2D" parent="AssignmentArea" unique_id=458124674]
 position = Vector2(96, 128)
 shape = SubResource("RectangleShape2D_bjdyr")
+
+[connection signal="body_entered" from="AssignmentArea" to="." method="_on_assignment_area_body_entered"]
+[connection signal="body_exited" from="AssignmentArea" to="." method="_on_assignment_area_body_exited"]
